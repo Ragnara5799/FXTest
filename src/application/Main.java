@@ -41,7 +41,6 @@ public class Main extends Application {
 				@Override
 				public void handle(MouseEvent event) {
 					primaryStage.setScene(scene);
-//					primaryStage.show();
 				}
 			});
 			button3.setOnMouseClicked(new EventHandler<MouseEvent>() {
