@@ -60,6 +60,7 @@ public class Main extends Application {
 			root2.getChildren().add(button2);
 			root.getChildren().add(button3);
 			
+			
 			scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			scene2 = new Scene(root2,800,800);
