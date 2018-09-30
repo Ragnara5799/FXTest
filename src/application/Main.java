@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 
 
@@ -33,7 +32,7 @@ public class Main extends Application {
 				@Override
 				public void handle(MouseEvent event) {
 					primaryStage.setScene(scene2);
-					primaryStage.show();
+//					primaryStage.show();
 				}
 			});
 			
@@ -42,7 +41,7 @@ public class Main extends Application {
 				@Override
 				public void handle(MouseEvent event) {
 					primaryStage.setScene(scene);
-					primaryStage.show();
+//					primaryStage.show();
 				}
 			});
 			button3.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -68,9 +67,6 @@ public class Main extends Application {
 			scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-//			Thread.sleep(10000L);
-//			primaryStage.setScene(scene2);
-//			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
