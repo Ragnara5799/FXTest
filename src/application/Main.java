@@ -32,7 +32,7 @@ public class Main extends Application {
 				@Override
 				public void handle(MouseEvent event) {
 					primaryStage.setScene(scene2);
-//					primaryStage.show();
+					primaryStage.show();
 				}
 			});
 			
