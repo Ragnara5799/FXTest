@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 
 public class Main extends Application {
@@ -19,20 +21,27 @@ public class Main extends Application {
 	Scene scene2;
 	boolean onScene1= true;
 	
+	private int zaehler = 0;
+	GridPane root3;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			root = new FlowPane();
 			root2 = new FlowPane();
+			root3 = new GridPane();
 			Button button1 = new Button("Hello1");
 			Button button2 = new Button("Hello2");
 			Button button3 = new Button("SwitchButton");
+			Text text1 = new Text("Hallo");
+			Button doSomthing = new Button("Do IT!");
+			
 			button1.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 				@Override
 				public void handle(MouseEvent event) {
 					primaryStage.setScene(scene2);
-					primaryStage.show();
+//					primaryStage.show();
 				}
 			});
 			
@@ -57,9 +66,19 @@ public class Main extends Application {
 					}
 				}
 			});
+			
+			doSomthing.setOnMouseClicked(new EventHandler<MouseEvent>() {
+				public void handle(MouseEvent event) {
+					zaehler++;
+					text1.setText("Die " + zaehler);
+				}
+			});
 			root.getChildren().add(button1);
 			root2.getChildren().add(button2);
 			root.getChildren().add(button3);
+			root.getChildren().add(text1);
+			root2.getChildren().add(doSomthing);
+			
 			
 			scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -67,6 +86,8 @@ public class Main extends Application {
 			scene2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
